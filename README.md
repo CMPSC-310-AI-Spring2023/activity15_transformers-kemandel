@@ -10,3 +10,21 @@
 ## Submission
 
 Submit completed Colab notebook showing generated output.
+
+## Description
+
+### Embedding and Positional Encoding
+
+This layer takes a set of tokens in and converts them to vectors. Since the attentional layers use these vectors in no particular order and in parallel, we use positional encoding to define the order of the words being used.
+
+### Attention Layers
+
+The model contatins many basic attention layers. These layers are used as a type of fuzzy, non-static dictionary lookup. This allows the model to provide an input sequence and be returned a query.
+
+#### Cross Attention Layer
+
+This attention layer is similar to the others, but it uses attention to instead connect the encoder and decoder.
+
+#### Global Self-Attention Layer
+
+This attention layer processes the context sequence, and propogates information along its length. Use attention here as opposed to RNNs and CNNs allows the model to be used in parallel. This allows us to move the work to GPU hardware, massively improving performance and efficiency.
